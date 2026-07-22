@@ -1,0 +1,8 @@
+{
+  "name": "That’s My Lingo Arena — Studio Production",
+  "short_name": "That’s My Lingo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0d12",
+  "theme_color": "#0a0d12"
+}
