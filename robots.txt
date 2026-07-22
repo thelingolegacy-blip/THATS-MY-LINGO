@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thats-my-lingo.vercel.app/sitemap.xml
