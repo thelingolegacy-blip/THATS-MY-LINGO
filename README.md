@@ -18,3 +18,7 @@ python3 -m http.server 3000
 ```
 
 Then visit `http://localhost:3000`.
+
+## Premium Studio Production Layout System
+
+See `docs/premium-production-layout-system.md` for the shared high-premium layout language and reference-image placement plan.
