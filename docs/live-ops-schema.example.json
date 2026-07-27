@@ -1,0 +1,40 @@
+{
+  "seasonId": "neon-founder-week",
+  "enabled": true,
+  "startsAt": "2026-08-01T00:00:00Z",
+  "endsAt": "2026-08-08T00:00:00Z",
+  "killSwitches": {
+    "bonusRounds": false,
+    "creatorCampaigns": false,
+    "leaderboards": false,
+    "rewardedAds": true
+  },
+  "rewardTables": {
+    "dailyReward": {
+      "demoCoins": 750,
+      "lingoTokens": 20,
+      "xp": 200,
+      "cashValue": 0
+    },
+    "missions": [
+      {
+        "missionId": "spin-5",
+        "type": "spin_count",
+        "target": 5,
+        "reward": { "xp": 250, "lingoTokens": 15, "cashValue": 0 }
+      },
+      {
+        "missionId": "win-3",
+        "type": "win_count",
+        "target": 3,
+        "reward": { "xp": 350, "lingoTokens": 25, "demoCoins": 300, "cashValue": 0 }
+      }
+    ]
+  },
+  "compliance": {
+    "noCashValue": true,
+    "cashOutEnabled": false,
+    "paidSpinsEnabled": false,
+    "redeemablePrizesEnabled": false
+  }
+}
