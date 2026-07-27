@@ -7,6 +7,7 @@ Included in the full game surface:
 - five-reel virtual slot gameplay with weighted symbols
 - row paylines, wild symbols, scatter bonuses, and multiplier outcomes
 - virtual coin bank, bet controls, XP, levels, tokens, daily rewards, missions, and creator-code rewards
+- weekly ladder, cosmetic pass, achievement badges, and unlockable profile status
 - browser-local saved progress with corrupt-storage fallback
 - CSS-built visual assets, reel animations, coin-burst effects, and reduced-motion handling
 - opt-in Web Audio sound effects generated in the browser
