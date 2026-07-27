@@ -17,7 +17,7 @@ Included in the full game surface:
 
 ## Live operations and release readiness
 
-See `docs/live-ops-release-readiness.md` for the event, admin tooling, backend persistence, QA, mobile-readiness, and release checklist. See `docs/backend-contracts.md` and `docs/live-ops-schema.example.json` for analytics events, Firestore collections, Cloud Function command contracts, and live-ops schema examples.
+See `docs/live-ops-release-readiness.md` for the event, admin tooling, backend persistence, QA, mobile-readiness, and release checklist. See `docs/backend-contracts.md` and `docs/live-ops-schema.example.json` for analytics events, Firestore collections, Cloud Function command contracts, and live-ops schema examples. See `docs/qa-release-report.md` and `docs/admin-operator-guide.md` for release evidence, manual QA, stop-ship rules, operator roles, and admin workflow.
 
 ## Validate
 
