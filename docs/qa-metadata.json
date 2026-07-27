@@ -1,0 +1,39 @@
+{
+  "project": "thats-my-lingo",
+  "deploymentType": "vercel-static-site",
+  "requiredChecks": [
+    "node scripts/validate-static-site.mjs",
+    "node scripts/smoke-static-site.mjs",
+    "git diff --check"
+  ],
+  "manualReview": [
+    "gameplay",
+    "rewards",
+    "telemetry",
+    "accessibility",
+    "responsive-ui",
+    "compliance-copy",
+    "rollback-readiness"
+  ],
+  "disallowedFeatures": [
+    "cash-out",
+    "deposits",
+    "withdrawals",
+    "paid-spins",
+    "cash-prizes",
+    "sports-betting",
+    "cryptocurrency-gambling",
+    "redeemable-prizes",
+    "odds-improvement-purchases"
+  ],
+  "allowedRewardTypes": [
+    "demo-coins",
+    "lingo-tokens",
+    "loyalty-bucks",
+    "mystery-keys",
+    "xp",
+    "badges",
+    "cosmetics",
+    "status-titles"
+  ]
+}
