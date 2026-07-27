@@ -11,13 +11,13 @@ Included in the full game surface:
 - browser-local saved progress with corrupt-storage fallback
 - CSS-built visual assets, reel animations, coin-burst effects, and reduced-motion handling
 - opt-in Web Audio sound effects generated in the browser
-- Vercel Analytics and Speed Insights scripts
+- Vercel Analytics and Speed Insights scripts with custom event hooks for gameplay, rewards, creator-code attribution, and monetization clicks
 - non-wagering monetization lanes for merch, sponsor packages, founder support, creator-code campaigns, cosmetic digital packs, and sponsored community events
 - no deposits, withdrawals, cash-out, paid spins, cash prizes, payments tied to gameplay outcomes, gambling services, backend, database, or package install
 
 ## Live operations and release readiness
 
-See `docs/live-ops-release-readiness.md` for the event, admin tooling, backend persistence, QA, mobile-readiness, and release checklist.
+See `docs/live-ops-release-readiness.md` for the event, admin tooling, backend persistence, QA, mobile-readiness, and release checklist. See `docs/backend-contracts.md` and `docs/live-ops-schema.example.json` for analytics events, Firestore collections, Cloud Function command contracts, and live-ops schema examples.
 
 ## Validate
 
