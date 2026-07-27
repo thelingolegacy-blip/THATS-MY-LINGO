@@ -11,7 +11,8 @@ Included in the full game surface:
 - CSS-built visual assets, reel animations, coin-burst effects, and reduced-motion handling
 - opt-in Web Audio sound effects generated in the browser
 - Vercel Analytics and Speed Insights scripts
-- no deposits, withdrawals, cash-out, payments, gambling services, backend, database, or package install
+- non-wagering monetization lanes for merch, sponsor packages, founder support, creator-code campaigns, cosmetic digital packs, and sponsored community events
+- no deposits, withdrawals, cash-out, paid spins, cash prizes, payments tied to gameplay outcomes, gambling services, backend, database, or package install
 
 ## Validate
 
@@ -23,4 +24,4 @@ git diff --check
 
 ## Safety
 
-All coins, tokens, XP, badges, Loyalty Bucks, Mystery Keys, streaks, and rewards are virtual entertainment-only values with no cash value.
+All coins, tokens, XP, badges, Loyalty Bucks, Mystery Keys, streaks, and rewards are virtual entertainment-only values with no cash value. Monetization must stay outside the game wallet and cannot sell spins, improve odds, enable cash-out, or create redeemable prizes.
