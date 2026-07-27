@@ -1,0 +1,33 @@
+{
+  "currentBuild": "static-vercel-web",
+  "accountsEnabled": false,
+  "paymentsEnabled": false,
+  "uploadsEnabled": false,
+  "chatEnabled": false,
+  "backendWalletEnabled": false,
+  "browserStorage": [
+    "demo-coins",
+    "xp",
+    "tokens",
+    "streaks",
+    "mission-claims",
+    "local-history"
+  ],
+  "analyticsEvents": [
+    "pageviews",
+    "tml_spin_start",
+    "tml_spin_result",
+    "tml_daily_reward",
+    "tml_mission_claim",
+    "tml_monetization_click"
+  ],
+  "disallowedAnalyticsPayloads": [
+    "names",
+    "emails",
+    "raw-creator-codes",
+    "payment-data",
+    "secrets",
+    "passwords",
+    "persistent-cross-site-identifiers"
+  ]
+}

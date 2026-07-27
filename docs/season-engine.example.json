@@ -1,0 +1,23 @@
+{
+  "seasonId": "shadow-noir-launch",
+  "theme": "Shadow Noir Launch Floor",
+  "enabled": false,
+  "startsAt": "2026-09-01T00:00:00Z",
+  "endsAt": "2026-10-01T00:00:00Z",
+  "questSetId": "daily-launch-quests",
+  "rewardTableId": "virtual-launch-rewards",
+  "mapZones": [
+    "lingo-floor",
+    "kottons-code-lane",
+    "loyalty-lane",
+    "legacy-legends-gate"
+  ],
+  "virtualRewardsOnly": true,
+  "cashValue": 0,
+  "killSwitches": {
+    "dailyQuests": false,
+    "walletDisplay": false,
+    "seasonProgress": false,
+    "inventoryUnlocks": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "status": "planning-only",
+  "liveSweepstakesEnabled": false,
+  "cashPrizesEnabled": false,
+  "purchaseEntriesEnabled": false,
+  "winnerDrawingEnabled": false,
+  "requiresLegalReview": true,
+  "requiresPrivacyReview": true,
+  "requiresAMOEParity": true,
+  "requiredBeforeLaunch": [
+    "official-rules-approved",
+    "privacy-policy-linked",
+    "amoe-tested",
+    "state-threshold-review",
+    "fraud-controls-enabled",
+    "audit-logs-enabled",
+    "winner-workflow-documented"
+  ],
+  "backendRecommendation": {
+    "framework": "Next.js App Router on Vercel",
+    "database": "Neon Postgres via Vercel Marketplace",
+    "orm": "Prisma"
+  }
+}
