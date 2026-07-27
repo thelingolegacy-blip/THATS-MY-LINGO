@@ -17,7 +17,7 @@ Included in the full game surface:
 
 ## Live operations and release readiness
 
-See `docs/live-ops-release-readiness.md` for the event, admin tooling, backend persistence, QA, mobile-readiness, and release checklist. See `docs/backend-contracts.md` and `docs/live-ops-schema.example.json` for analytics events, Firestore collections, Cloud Function command contracts, and live-ops schema examples. See `docs/qa-release-report.md`, `docs/admin-operator-guide.md`, `docs/release-manifest.md`, and `docs/qa-metadata.json` for release evidence, manual QA, stop-ship rules, operator roles, admin workflow, launch gates, and machine-readable QA metadata.
+See `docs/live-ops-release-readiness.md` for the event, admin tooling, backend persistence, QA, mobile-readiness, and release checklist. See `docs/backend-contracts.md` and `docs/live-ops-schema.example.json` for analytics events, Firestore collections, Cloud Function command contracts, and live-ops schema examples. See `docs/qa-release-report.md`, `docs/admin-operator-guide.md`, `docs/release-manifest.md`, and `docs/qa-metadata.json` for release evidence, manual QA, stop-ship rules, operator roles, admin workflow, launch gates, and machine-readable QA metadata. See `docs/app-store-readiness.md`, `docs/privacy-disclosures.md`, and `docs/privacy-metadata.json` for mobile policy, privacy disclosures, and app-store readiness.
 
 ## Validate
 
