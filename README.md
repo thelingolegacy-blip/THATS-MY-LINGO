@@ -1,24 +1,26 @@
 # THATS-MY-LINGO
 
-Static launch site for That’s My Lingo with:
+Static no-real-money virtual casino game for That’s My Lingo.
 
-- playable bonus-game prompts
-- store/support intent CTAs
-- creator-code request CTA
-- native share + clipboard invite loop
+Included in the full game surface:
 
-No package install or paid backend service is required.
+- five-reel virtual slot gameplay with weighted symbols
+- row paylines, wild symbols, scatter bonuses, and multiplier outcomes
+- virtual coin bank, bet controls, XP, levels, tokens, daily rewards, missions, and creator-code rewards
+- browser-local saved progress with corrupt-storage fallback
+- CSS-built visual assets, reel animations, coin-burst effects, and reduced-motion handling
+- opt-in Web Audio sound effects generated in the browser
+- Vercel Analytics and Speed Insights scripts
+- no deposits, withdrawals, cash-out, payments, gambling services, backend, database, or package install
 
 ## Validate
 
-Open `index.html` locally or run:
-
 ```bash
-python3 -m http.server 3000
+node scripts/validate-static-site.mjs
+node scripts/smoke-static-site.mjs
+git diff --check
 ```
 
-Then visit `http://localhost:3000`.
+## Safety
 
-## Premium Studio Production Layout System
-
-See `docs/premium-production-layout-system.md` for the shared high-premium layout language and reference-image placement plan.
+All coins, tokens, XP, badges, Loyalty Bucks, Mystery Keys, streaks, and rewards are virtual entertainment-only values with no cash value.
