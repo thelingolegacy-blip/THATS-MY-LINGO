@@ -16,4 +16,15 @@ Export the images from chat/design tools into this folder using these names:
 - `lingo-referral-crew.png` — referral/share character crew art
 - `lingo-neon-light-effects.png` — neon streak and light-effect sheet
 
+- `lingo-crown-dark.png` — jeweled crown on dark background
+- `lingo-combo-streak-fire.png` — fire combo streak counter panel
+- `lingo-crown-transparent.png` — crown cutout/transparent-style asset
+- `lingo-gold-anchor.png` — gold anchor emblem
+- `lingo-loyalty-bucks.png` — loyalty bucks coin reward screen
+
+- `lingo-ui-elements-reference.png` — UI elements and gameplay screen reference sheet
+- `lingo-slot-economy-overview.png` — slot economy and app flow overview
+- `lingo-visual-sfx-animation-sheet.png` — visual, sound, and animation reference sheet
+- `lingo-gameplay-wireframe-overview.png` — detailed gameplay wireframe overview
+
 The static page references them as `/public/images/<filename>`.
