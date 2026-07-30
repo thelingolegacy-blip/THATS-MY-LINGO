@@ -99,3 +99,91 @@ img, svg, video { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.001ms !important; }
 }
+
+
+/* Image-ready studio art section. Place exported files in /public/images using the names below. */
+.art-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
+  gap: 16px;
+  align-items: stretch;
+}
+.art-card {
+  position: relative;
+  min-height: 280px;
+  margin: 0;
+  border: 1px solid rgba(247, 200, 75, 0.34);
+  border-radius: 30px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 74, 216, 0.2), transparent 18rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035)),
+    rgba(10, 4, 16, 0.84);
+  box-shadow: 0 34px 120px rgba(0, 0, 0, 0.56);
+}
+.art-card.wide { min-height: 360px; }
+.art-card.tall {
+  grid-row: span 2;
+  min-height: 736px;
+}
+.art-card img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  display: block;
+}
+.art-card.tall img { object-position: center top; }
+.art-card figcaption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(247, 200, 75, 0.28);
+  border-radius: 20px;
+  color: var(--studio-v2-text, #fff9e8);
+  background: linear-gradient(180deg, rgba(5, 5, 8, 0.34), rgba(5, 5, 8, 0.88));
+  backdrop-filter: blur(12px);
+}
+.art-card figcaption strong {
+  color: var(--studio-v2-gold, #f7c84b);
+  display: block;
+  font-size: 1.02rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.art-card figcaption span {
+  color: var(--studio-v2-muted, #cfc3a2);
+  font-size: 0.9rem;
+  max-width: 34rem;
+  text-align: right;
+}
+.art-card.is-missing::before {
+  content: "Add image file to public/images";
+  position: absolute;
+  inset: 20px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgba(247, 200, 75, 0.45);
+  border-radius: 22px;
+  color: var(--studio-v2-gold, #f7c84b);
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .art-gallery { grid-template-columns: 1fr; }
+  .art-card.tall { grid-row: auto; min-height: 520px; }
+  .art-card.wide { min-height: 280px; }
+}
+@media (max-width: 640px) {
+  .art-card figcaption { position: static; border-radius: 0; align-items: start; flex-direction: column; }
+  .art-card figcaption span { text-align: left; }
+  .art-card, .art-card.wide, .art-card.tall { min-height: 240px; }
+}
