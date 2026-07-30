@@ -41,7 +41,7 @@
           <button class="button" id="soundToggle"><span>Studio Sound: Off</span></button>
           <a class="button" href="#rules"><span>Official Rules</span></a>
         </div>
-        <div class="studio-rail" aria-label="Studio production cues"><span>Neon floor live</span><span>Bulldog host armed</span><span>Entries only</span></div>
+        <div class="studio-rail" aria-label="Studio production cues"><span>Neon floor live</span><span>Bulldog host armed</span><span>Virtual currency only</span></div>
         <div class="mascot" aria-label="Bulldog Lingo mascot">
           <div class="dog" id="dog"><span class="ear left"></span><span class="ear right"></span><span class="head"></span><span class="eye left"></span><span class="eye right"></span><span class="muzzle"></span><span class="nose"></span><span class="chain"></span></div>
           <div class="speech" id="speech">Lingo Time. Claim today’s free entry spin.</div>
@@ -51,14 +51,19 @@
       <div class="hero-card">
         <div class="machine">
           <div class="marquee"><b>Entry Grid</b><span id="marquee">Vegas studio lights armed</span></div>
+          <div class="wallet" aria-label="Virtual no-wager currency balances">
+            <div class="wallet-card demo"><span>Demo Coins</span><strong id="demoCoins">0</strong><small>Virtual play balance</small></div>
+            <div class="wallet-card loyalty"><span>Loyalty Bucks</span><strong id="loyaltyBucks">0</strong><small>Cosmetic rewards only</small></div>
+            <div class="wallet-card notice"><span>No Real Wagers</span><strong>$0</strong><small>No deposits, payouts, or cash-out</small></div>
+          </div>
           <div class="game-grid" id="grid" aria-live="polite"></div>
           <div class="hud">
             <div class="meter">Entries <strong id="entries">0</strong></div>
-            <div class="meter">Streak <strong id="streak">1 day</strong></div>
-            <div class="meter">Boost <strong id="boost">Ready</strong></div>
+            <div class="meter">Demo Coins <strong id="demoMeter">0</strong></div>
+            <div class="meter">Loyalty Bucks <strong id="loyaltyMeter">0</strong></div>
             <div class="meter">Last Result <strong id="result">Waiting</strong></div>
           </div>
-          <div class="statusbar" style="margin-top:12px"><span id="status">No bets. No wagers. Entries only. Studio floor standing by.</span><button class="button primary" id="spinAgain"><span>Spin Again</span></button></div>
+          <div class="statusbar" style="margin-top:12px"><span id="status">No bets. No wagers. No deposits. Virtual Demo Coins and Loyalty Bucks only.</span><button class="button primary" id="spinAgain"><span>Spin Again</span></button></div>
         </div>
       </div>
     </section>
@@ -67,14 +72,14 @@
       <div class="section-head"><h2>Fast, clear, sweepstakes-safe entry flow</h2><p>The first scroll now reinforces why visitors can play, what happens next, and how the experience stays separate from wagering.</p></div>
       <div class="grid cols-4">
         <article class="card"><span class="tag">Free path</span><h3>Daily entry first</h3><p>The primary call to action remains the no-purchase daily free entry spin.</p></article>
-        <article class="card"><span class="tag">Clarity</span><h3>No bets or payouts</h3><p>Copy repeats entries-only progression before bonus mechanics appear.</p></article>
+        <article class="card"><span class="tag">Dual currency</span><h3>Demo Coins + Loyalty Bucks</h3><p>Spins award virtual Demo Coins, Loyalty Bucks, and entries for entertainment-only progression.</p></article>
         <article class="card"><span class="tag">Energy</span><h3>Live arcade feel</h3><p>Tokens, mascot reactions, wheel spins, and streaks create momentum without cash-out framing.</p></article>
         <article class="card"><span class="tag">Next action</span><h3>Rules always visible</h3><p>Official rules, eligibility, and sponsor context remain available from the top flow.</p></article>
       </div>
     </section>
 
     <section class="section wrap" id="bonus">
-      <div class="section-head"><h2>Bonus Zone</h2><p>Wheel of Entries, Pick-A-Box reveals, and daily streak rewards add entry progression without wagers or cash-out mechanics.</p></div>
+      <div class="section-head"><h2>Bonus Zone</h2><p>Wheel of Entries, Pick-A-Box reveals, and daily streak rewards add Demo Coins, Loyalty Bucks, and entry progression without wagers or cash-out mechanics.</p></div>
       <div class="grid cols-2">
         <article class="card">
           <span class="tag">Wheel of Entries</span>
@@ -90,7 +95,7 @@
         <article class="card">
           <span class="tag">Pick-A-Box Bonus</span>
           <h3>9 gold boxes</h3>
-          <p>Reveal random entries, multipliers, studio badges, or sponsored bonus spins with smoke-flash styling.</p>
+          <p>Reveal random virtual coins, Loyalty Bucks, entries, multipliers, studio badges, or sponsored bonus spins with smoke-flash styling.</p>
           <div class="boxes" id="boxes"></div>
         </article>
       </div>
@@ -229,17 +234,18 @@
     </section>
 
     <section class="section wrap" id="rules">
-      <div class="section-head"><h2>Compliance frame</h2><p>This front-end experience is written for sweepstakes-safe presentation: no bets, no wagers, no gameplay payouts, entries only.</p></div>
+      <div class="section-head"><h2>Compliance frame</h2><p>This front-end experience is written for sweepstakes-safe presentation: no bets, no wagers, no deposits, no withdrawals, no cash-out, and virtual currencies only.</p></div>
       <div class="grid cols-3">
         <article class="card"><span class="tag">Required notice</span><h3>No purchase necessary</h3><p>A free daily entry spin is always available and presented as the primary call to action.</p></article>
         <article class="card"><span class="tag">Restrictions</span><h3>Void where prohibited</h3><p>Eligibility, dates, odds, and fulfillment must be governed by the final Official Rules.</p></article>
+        <article class="card"><span class="tag">Wallet safety</span><h3>Virtual balances only</h3><p>Demo Coins and Loyalty Bucks have no cash value and cannot be deposited, withdrawn, transferred, redeemed, or cashed out.</p></article>
         <article class="card"><span class="tag">Sponsor</span><h3>The Iconic House of Avalon, Inc.</h3><p>Footer copy keeps sponsor attribution visible throughout the live-play session.</p></article>
       </div>
     </section>
   </main>
 
   <div class="legal" aria-label="Sweepstakes legal footer"><div class="wrap"><strong>NO PURCHASE NECESSARY</strong><span>VOID WHERE PROHIBITED</span><span>Ends 12/31/2026</span><a href="#rules">See Official Rules</a><span>Sponsor: The Iconic House of Avalon, Inc.</span></div></div>
-  <footer class="footer"><div class="wrap"><strong>That’s My Lingo: Vegas Studio Sweepstakes</strong><br><span>Live-play web activation for entry-based progression. No bets, no payouts, entries only.</span></div></footer>
+  <footer class="footer"><div class="wrap"><strong>That’s My Lingo: Vegas Studio Sweepstakes</strong><br><span>Live-play web activation for virtual entry-based progression. No bets, no payouts, no deposits, no withdrawals, no cash-out.</span></div></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -253,16 +259,17 @@
     ];
     const prizeTiers=[['Crown Studio Tier','Spotlight badge + VIP cosmetic'],['Gold Mic Tier','Profile frame + bonus entry reveal'],['Neon Booth Tier','Mascot animation + trophy shelf'],['Weekly Studio Tier','Bonus spin moment + XP burst'],['Daily Studio Tier','Entry reveal + streak shine'],['Instant Studio Drops','Merch badges, XP, digital collectibles']];
     const wheelValues=[2,3,5,10,25,50,2,3,5,10,25,50];
-    const boxValues=['+5 entries','x2 boost','Studio badge','+10 entries','Bonus spin','+25 entries','Mascot token','x3 boost','Digital collectible'];
+    const boxValues=['+5 entries','+250 Demo Coins','+25 Loyalty Bucks','Studio badge','+10 entries','Bonus spin','+25 entries','Mascot token','x3 boost','Digital collectible'];
     const safeStore={get(key,fallback){try{return localStorage.getItem(key)??fallback}catch{return fallback}},set(key,value){try{localStorage.setItem(key,value)}catch{}}};
-    const state={entries:Number(safeStore.get('tml-sweeps-entries',0))||0,streak:Number(safeStore.get('tml-sweeps-streak',1))||1,spins:Number(safeStore.get('tml-sweeps-spins',0))||0,boost:'Ready',sound:false,audio:null,ambient:null,log:[]};
+    const readNumber=(key,fallback)=>Number(safeStore.get(key,fallback))||fallback;
+    const state={entries:readNumber('tml-sweeps-entries',0),demoCoins:readNumber('tml-demo-coins',50000),loyaltyBucks:readNumber('tml-loyalty-bucks',25),streak:readNumber('tml-sweeps-streak',1),spins:readNumber('tml-sweeps-spins',0),boost:'Ready',sound:false,audio:null,ambient:null,log:[]};
     const el=id=>document.getElementById(id);const grid=el('grid'),toast=el('toast'),dog=el('dog');
-    function save(){safeStore.set('tml-sweeps-entries',state.entries);safeStore.set('tml-sweeps-streak',state.streak);safeStore.set('tml-sweeps-spins',state.spins)}
+    function save(){safeStore.set('tml-sweeps-entries',state.entries);safeStore.set('tml-demo-coins',state.demoCoins);safeStore.set('tml-loyalty-bucks',state.loyaltyBucks);safeStore.set('tml-sweeps-streak',state.streak);safeStore.set('tml-sweeps-spins',state.spins)}
     function track(name,data={}){try{if(typeof window.va==='function')window.va('event',{name,data});}catch{}}
     function pick(){const total=tokenTypes.reduce((a,t)=>a+t.weight,0);let roll=Math.random()*total;for(const token of tokenTypes){roll-=token.weight;if(roll<=0)return token;}return tokenTypes[0]}
     function entryValue(token){return Math.floor(token.entries[0]+Math.random()*(token.entries[1]-token.entries[0]+1))}
     function renderGrid(tokens){grid.innerHTML='';tokens.forEach((token,i)=>{const node=document.createElement('div');node.className=`token ${token.id} cascade`;node.style.animationDelay=`${i*24}ms`;node.innerHTML=`<span><span class="icon">${token.icon}</span><small>${token.label}</small></span>`;grid.appendChild(node)})}
-    function renderHud(){el('entries').textContent=state.entries.toLocaleString();el('streak').textContent=`${state.streak} day${state.streak===1?'':'s'}`;el('boost').textContent=state.boost;el('result').textContent=state.log[0]?.replace(/<[^>]+>/g,'')||'Waiting';el('streakBar').style.width=`${Math.min(100,state.streak/7*100)}%`;el('streakCopy').textContent=state.streak>=7?'Weekly streak reward unlocked: bonus spin ready.':`${7-state.streak} day(s) until weekly streak reward.`;el('log').innerHTML=(state.log.length?state.log:['<div class="bonus-log-row"><span>Session ready</span><b>0 entries</b></div>']).slice(0,6).join('');el('ladder').innerHTML=prizeTiers.map((tier,i)=>`<div class="tier ${i===0&&state.entries>=500?'active':''}"><span>${tier[0]}</span><b>${tier[1]}</b></div>`).join('')}
+    function renderHud(){el('entries').textContent=state.entries.toLocaleString();el('demoCoins').textContent=state.demoCoins.toLocaleString();el('loyaltyBucks').textContent=state.loyaltyBucks.toLocaleString();el('demoMeter').textContent=state.demoCoins.toLocaleString();el('loyaltyMeter').textContent=state.loyaltyBucks.toLocaleString();el('result').textContent=state.log[0]?.replace(/<[^>]+>/g,'')||'Waiting';el('streakBar').style.width=`${Math.min(100,state.streak/7*100)}%`;el('streakCopy').textContent=state.streak>=7?'Weekly streak reward unlocked: bonus spin ready.':`${7-state.streak} day(s) until weekly streak reward.`;el('log').innerHTML=(state.log.length?state.log:['<div class="bonus-log-row"><span>Session ready</span><b>0 entries</b></div>']).slice(0,6).join('');el('ladder').innerHTML=prizeTiers.map((tier,i)=>`<div class="tier ${i===0&&state.loyaltyBucks>=500?'active':''}"><span>${tier[0]}</span><b>${tier[1]}</b></div>`).join('')}
     function log(label,value){state.log.unshift(`<div class="bonus-log-row"><span>${label}</span><b>${value}</b></div>`);state.log=state.log.slice(0,8)}
     function burst(count=12){for(let i=0;i<count;i++){const p=document.createElement('span');p.className='particle';p.style.left=(50+Math.random()*24-12)+'vw';p.style.top=(62+Math.random()*14)+'vh';p.style.setProperty('--x',(Math.random()*260-130)+'px');p.style.setProperty('--y',(-80-Math.random()*180)+'px');document.body.appendChild(p);setTimeout(()=>p.remove(),920)}}
     function toastMsg(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastMsg.t);toastMsg.t=setTimeout(()=>toast.classList.remove('show'),2500)}
@@ -272,9 +279,9 @@
     function startAmbience(){if(!state.sound||state.ambient)return;const audio=ensureAudio();if(!audio)return;const gain=audio.createGain();gain.gain.value=.006;const low=audio.createOscillator();const shimmer=audio.createOscillator();low.type='sine';shimmer.type='triangle';low.frequency.value=55;shimmer.frequency.value=165;low.connect(gain);shimmer.connect(gain);gain.connect(audio.destination);low.start();shimmer.start();state.ambient={low,shimmer,gain}}
     function stopAmbience(){if(!state.ambient)return;const {low,shimmer,gain}=state.ambient;gain.gain.exponentialRampToValueAtTime(.001,state.audio.currentTime+.18);setTimeout(()=>{low.stop();shimmer.stop();state.ambient=null},220)}
     function mascot(line){el('speech').textContent=line;dog.classList.remove('hype');void dog.offsetWidth;dog.classList.add('hype')}
-    function spin(){const tokens=Array.from({length:15},pick);renderGrid(tokens);state.spins++;let added=0;tokens.forEach(token=>added+=entryValue(token));const rare=tokens.filter(t=>['wild','mascot','prize'].includes(t.id)).length;const multiplier=tokens.filter(t=>t.id==='mult').length>=2?2:1;added*=multiplier;state.entries+=added;state.streak=Math.min(30,state.streak+(state.spins%3===0?1:0));state.boost=rare>=4?'Mega Entry Boost':rare>=2?'Big Entry Boost':multiplier>1?'Multiplier Boost':'Entry Drop';el('marquee').textContent=state.boost;el('status').textContent=`${state.boost}: ${added.toLocaleString()} entries added. No wager was placed.`;tokens.forEach((token,i)=>{if(['wild','mascot','prize','mult'].includes(token.id))setTimeout(()=>grid.children[i]?.classList.add('hit'),420)});burst(rare>=4?28:rare>=2?18:10);tone(220,.09,'sawtooth');setTimeout(()=>tone(660,.18,'triangle'),120);setTimeout(()=>tone(110,.18,'square'),260);setTimeout(()=>sparkle(rare>=2?520:360),330);mascot(rare>=4?'Crown Tier energy. Spotlight drop activated.':rare>=2?'Big Boost. Let’s go.':'Lingo Spin complete. Entries added.');log(state.boost,`+${added.toLocaleString()} entries`);save();renderHud();track('tml_sweepstakes_spin',{entriesAdded:added,boost:state.boost,spins:state.spins})}
-    function buildBoxes(){el('boxes').innerHTML='';boxValues.forEach((value,i)=>{const b=document.createElement('button');b.className='box';b.textContent=`Box ${i+1}`;b.addEventListener('click',()=>{if(b.classList.contains('open'))return;b.classList.add('open');b.textContent=value;let added=value.includes('+')?Number(value.match(/\d+/)?.[0]||0):value.includes('x')?15:8;state.entries+=added;log('Pick-A-Box reveal',`+${added} entries`);burst(10);tone(720,.14,'triangle');setTimeout(()=>sparkle(540),80);mascot('Box reveal. Gold flash.');save();renderHud();track('tml_pick_box',{value,entriesAdded:added})});el('boxes').appendChild(b)})}
-    el('dailySpin').addEventListener('click',spin);el('spinAgain').addEventListener('click',spin);el('soundToggle').addEventListener('click',e=>{state.sound=!state.sound;e.currentTarget.classList.toggle('active',state.sound);e.currentTarget.querySelector('span').textContent=`Studio Sound: ${state.sound?'On':'Off'}`;state.sound?startAmbience():stopAmbience();tone(520,.12,'triangle');setTimeout(()=>sparkle(520),40);track('tml_sound_toggle',{enabled:state.sound})});el('wheelSpin').addEventListener('click',()=>{const index=Math.floor(Math.random()*wheelValues.length);const value=wheelValues[index];el('wheel').style.transform=`rotate(${720+index*30}deg)`;const added=value*5;state.entries+=added;state.boost=`x${value} Wheel`;log('Wheel of Entries',`+${added} entries`);burst(value>=25?24:14);tone(320,.15,'sawtooth');setTimeout(()=>tone(820,.22,'triangle'),420);setTimeout(()=>sparkle(value>=25?660:460),520);mascot(`Wheel landed on x${value}. Mascot bark.`);save();renderHud();track('tml_wheel_spin',{multiplier:value,entriesAdded:added})});document.addEventListener('pointermove',e=>{document.body.style.setProperty('--mx',`${e.clientX}px`);document.body.style.setProperty('--my',`${e.clientY}px`)});document.querySelectorAll('.button').forEach(btn=>btn.addEventListener('pointermove',e=>{const r=btn.getBoundingClientRect();btn.style.setProperty('--bx',`${e.clientX-r.left}px`);btn.style.setProperty('--by',`${e.clientY-r.top}px`)}));
+    function spin(){const tokens=Array.from({length:15},pick);renderGrid(tokens);state.spins++;let added=0;tokens.forEach(token=>added+=entryValue(token));const rare=tokens.filter(t=>['wild','mascot','prize'].includes(t.id)).length;const multiplier=tokens.filter(t=>t.id==='mult').length>=2?2:1;added*=multiplier;const coinDrop=added*100+(rare*250);const loyaltyDrop=Math.max(1,Math.floor(added/5))+(rare>=2?10:0);state.entries+=added;state.demoCoins+=coinDrop;state.loyaltyBucks+=loyaltyDrop;state.streak=Math.min(30,state.streak+(state.spins%3===0?1:0));state.boost=rare>=4?'Mega Dual-Currency Boost':rare>=2?'Big Loyalty Boost':multiplier>1?'Multiplier Coin Boost':'Virtual Entry Drop';el('marquee').textContent=state.boost;el('status').textContent=`${state.boost}: +${added.toLocaleString()} entries, +${coinDrop.toLocaleString()} Demo Coins, +${loyaltyDrop.toLocaleString()} Loyalty Bucks. No real wager was placed.`;tokens.forEach((token,i)=>{if(['wild','mascot','prize','mult'].includes(token.id))setTimeout(()=>grid.children[i]?.classList.add('hit'),420)});burst(rare>=4?28:rare>=2?18:10);tone(220,.09,'sawtooth');setTimeout(()=>tone(660,.18,'triangle'),120);setTimeout(()=>tone(110,.18,'square'),260);setTimeout(()=>sparkle(rare>=2?520:360),330);mascot(rare>=4?'Crown Tier energy. Virtual Loyalty Bucks boosted.':rare>=2?'Big Boost. Demo Coins and Loyalty Bucks added.':'Lingo Spin complete. Virtual balances updated.');log(state.boost,`+${added.toLocaleString()} entries · +${coinDrop.toLocaleString()} coins · +${loyaltyDrop} LB`);save();renderHud();track('tml_sweepstakes_spin',{entriesAdded:added,demoCoinsAdded:coinDrop,loyaltyBucksAdded:loyaltyDrop,boost:state.boost,spins:state.spins})}
+    function buildBoxes(){el('boxes').innerHTML='';boxValues.forEach((value,i)=>{const b=document.createElement('button');b.className='box';b.textContent=`Box ${i+1}`;b.addEventListener('click',()=>{if(b.classList.contains('open'))return;b.classList.add('open');b.textContent=value;let entryAdd=0,coinAdd=0,loyaltyAdd=0;if(value.includes('Demo Coins'))coinAdd=Number(value.match(/\d+/)?.[0]||0);else if(value.includes('Loyalty Bucks'))loyaltyAdd=Number(value.match(/\d+/)?.[0]||0);else if(value.includes('+'))entryAdd=Number(value.match(/\d+/)?.[0]||0);else if(value.includes('x')){entryAdd=15;coinAdd=750}else{coinAdd=400;loyaltyAdd=5}state.entries+=entryAdd;state.demoCoins+=coinAdd;state.loyaltyBucks+=loyaltyAdd;log('Pick-A-Box reveal',`+${entryAdd} entries · +${coinAdd} coins · +${loyaltyAdd} LB`);burst(10);tone(720,.14,'triangle');setTimeout(()=>sparkle(540),80);mascot('Box reveal. Virtual rewards added.');save();renderHud();track('tml_pick_box',{value,entriesAdded:entryAdd,demoCoinsAdded:coinAdd,loyaltyBucksAdded:loyaltyAdd})});el('boxes').appendChild(b)})}
+    el('dailySpin').addEventListener('click',spin);el('spinAgain').addEventListener('click',spin);el('soundToggle').addEventListener('click',e=>{state.sound=!state.sound;e.currentTarget.classList.toggle('active',state.sound);e.currentTarget.querySelector('span').textContent=`Studio Sound: ${state.sound?'On':'Off'}`;state.sound?startAmbience():stopAmbience();tone(520,.12,'triangle');setTimeout(()=>sparkle(520),40);track('tml_sound_toggle',{enabled:state.sound})});el('wheelSpin').addEventListener('click',()=>{const index=Math.floor(Math.random()*wheelValues.length);const value=wheelValues[index];el('wheel').style.transform=`rotate(${720+index*30}deg)`;const added=value*5;const coinAdd=value*250;const loyaltyAdd=Math.max(5,Math.floor(value/2));state.entries+=added;state.demoCoins+=coinAdd;state.loyaltyBucks+=loyaltyAdd;state.boost=`x${value} Virtual Wheel`;log('Wheel of Entries',`+${added} entries · +${coinAdd.toLocaleString()} coins · +${loyaltyAdd} LB`);burst(value>=25?24:14);tone(320,.15,'sawtooth');setTimeout(()=>tone(820,.22,'triangle'),420);setTimeout(()=>sparkle(value>=25?660:460),520);mascot(`Wheel landed on x${value}. Virtual rewards only.`);save();renderHud();track('tml_wheel_spin',{multiplier:value,entriesAdded:added,demoCoinsAdded:coinAdd,loyaltyBucksAdded:loyaltyAdd})});document.addEventListener('pointermove',e=>{document.body.style.setProperty('--mx',`${e.clientX}px`);document.body.style.setProperty('--my',`${e.clientY}px`)});document.querySelectorAll('.button').forEach(btn=>btn.addEventListener('pointermove',e=>{const r=btn.getBoundingClientRect();btn.style.setProperty('--bx',`${e.clientX-r.left}px`);btn.style.setProperty('--by',`${e.clientY-r.top}px`)}));
     buildBoxes();renderGrid(['entry','bonus','mult','prize','wild','mascot','entry','bonus','mult','prize','wild','entry','bonus','mascot','entry'].map(id=>tokenTypes.find(t=>t.id===id)));renderHud();
   </script>
 </body>
