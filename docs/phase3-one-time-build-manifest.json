@@ -1,0 +1,12 @@
+{
+  "artifact": "THATS-MY-LINGO-PHASE3-BETA",
+  "version": "3.0.0-beta",
+  "releaseDate": "2026-09-07",
+  "sourceOfTruth": "GitHub",
+  "branch": "phase3-expansion-2026-09-07",
+  "status": "specification-and-release-contract",
+  "systems": ["tournaments","dailyBonus","achievements","profileV2","economy","antiCheat","analytics","kottonsCodeEpisode1","multiplayerFoundation"],
+  "economy": {"virtualOnly": true, "realMoneyWagering": false, "cashOut": false, "cashEquivalentRedemption": false, "paidSpins": false},
+  "releaseGates": ["validation","smoke-test","git-diff-check","secret-scan","mobile-qa","rollback-target","release-evidence"],
+  "nextDeployment": "Connect this branch to the authorized Cloudflare/Vercel deployment pipeline and build from the pinned commit; do not bypass release gates."
+}
