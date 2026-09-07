@@ -1,0 +1,37 @@
+name: Phase 3 Release Gates
+on:
+  push:
+    branches: [main, phase3-expansion-2026-09-07]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate static site when scripts exist
+        shell: bash
+        run: |
+          if [ -f package.json ]; then npm ci || npm install; fi
+          if [ -f scripts/validate-static-site.mjs ]; then node scripts/validate-static-site.mjs; fi
+      - name: Smoke test when script exists
+        shell: bash
+        run: |
+          if [ -f scripts/smoke-static-site.mjs ]; then node scripts/smoke-static-site.mjs; fi
+      - name: Diff check
+        run: git diff --check
+      - name: Secret filename guard
+        shell: bash
+        run: |
+          if git ls-files | grep -E '(^|/)(\.env|.*\.pem|.*\.key)$'; then echo 'Potential secret file tracked'; exit 1; fi
+      - name: Economy contract guard
+        shell: bash
+        run: |
+          if grep -RIn --exclude-dir=.git -E 'cash[-_ ]?out|real[-_ ]money wager|paid spins' . | grep -v 'docs/phase3-expansion-spec.md' | head -20; then echo 'Review economy references before release'; fi
+      - name: Manifest presence
+        run: test -f docs/phase3-one-time-build-manifest.json
