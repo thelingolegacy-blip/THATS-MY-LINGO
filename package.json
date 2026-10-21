@@ -1,0 +1,10 @@
+{
+  "name": "thats-my-lingo-preview25-math-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:math": "node --test tests/game-math.test.mjs",
+    "test:static": "python scripts/tml_quality_gate.py",
+    "test": "npm run test:math && npm run test:static"
+  }
+}
