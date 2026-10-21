@@ -11,6 +11,13 @@ Four separate arcade identities under the That’s My Lingo studio umbrella. Sha
 3. **Cashman Lingo Mania** — five-reel local virtual slot with provisional test paytable. Added an initial emoji-based Cashman mascot placeholder to establish the direction: a young adult streetwear character with hoodie/cap, chain, sneakers, expressive reactions, and LINGO attitude. This is not finished character art. Paytable values are not approved production math or certified RTP.
 4. **Lions Lingo Eruptions** — changed from swap-match tiles to a reveal-and-row prototype. Balls begin hidden; tapping reveals a ball. A horizontal row of three or more matching revealed balls scores points and clears the row into new hidden balls. Longer rows receive a bonus. Current build uses 24 reveals and local scoring; vertical matches, cascades, special balls, and full balancing remain future work.
 
+## Visual assets, representation, and licensing
+
+- Representation direction: center African-American / Black characters across mascot art, profile avatars, promotional pop-ups, character reactions, and future game illustrations. Avoid stereotypes; portray varied skin tones, hairstyles, streetwear, and personalities with dignity and specificity.
+- The mini-game page now includes an original inline SVG Black Cashman concept, a subtle idle animation, an accessible live-status pop-up, and character reaction copy. This is original prototype vector art, not a finished production illustration.
+- Current interface icons use inline SVG/CSS/native symbols, avoiding paid icon packs and unverified external downloads.
+- Before adding third-party art, icons, sounds, logos, or animations, verify the exact asset's commercial-use license and attribution terms; keep a source/license manifest. Do not assume every asset described as “free” permits commercial use.
+
 ## UX and functions
 
 - Arcade catalog and direct links to each game, native buttons, live status text, restart controls, local demo wallet, and cosmetic-only store.
