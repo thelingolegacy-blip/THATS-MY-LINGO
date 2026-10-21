@@ -1,7 +1,7 @@
 # LINGO Mini Games — Preview Specification
 
 ## Included prototypes
-1. **Spades Is My Lingo** — four-seat trick-taking prototype. Spades are trump; follow suit when possible; a simplified team contract scoring model is displayed in the game. This is not full tournament-grade Spades yet.
+1. **Spades Is My Lingo** — four-seat trick-taking prototype. Spades are trump; follow suit when possible; a trick-count prototype; formal bidding and team-contract scoring are not implemented yet. This is not full tournament-grade Spades yet.
 2. **Uhno Lingo U-NO** — color/number shedding-card prototype with draw, skip, reverse, +2, and wild concepts. House rules are simplified; stacking, challenge rules, exact deck distribution, and full reverse/turn-order logic require approval.
 3. **Cashman Lingo Mania** — five-reel virtual slot prototype using a disclosed test paytable. A spin costs 10 local demo Play Coins. Payouts are fixed for test purposes, not an approved production paytable or certified RTP.
 4. **Lions Lingo Eruptions** — 7×7 match puzzle prototype with adjacent swaps, score, and a 20-move limit. Cascades and refill behavior are simplified and need further QA.
