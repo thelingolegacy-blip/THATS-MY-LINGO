@@ -41,6 +41,9 @@ test("poker kickers break pair and two-pair ties", () => {
   const pairA = hand(card(12,"clubs"),card(12,"diamonds"),card(14,"spades"),card(9,"hearts"),card(3,"clubs"));
   const pairB = hand(card(12,"hearts"),card(12,"spades"),card(13,"spades"),card(9,"clubs"),card(3,"diamonds"));
   assert.equal(comparePokerHands(pairA, pairB), 1);
+  assert.equal(comparePokerHands(pairA, pairA), 0);
+  assert.throws(() => comparePokerHands({ category: 9, tiebreakers: [14] }, pairA), /category must be an integer from 0 through 8/);
+  assert.throws(() => comparePokerHands({ category: 1, tiebreakers: [14, 1] }, pairA), /tiebreakers must contain/);
   const twoPairA = hand(card(14,"clubs"),card(14,"diamonds"),card(5,"spades"),card(5,"hearts"),card(13,"clubs"));
   const twoPairB = hand(card(14,"hearts"),card(14,"spades"),card(5,"clubs"),card(5,"diamonds"),card(12,"clubs"));
   assert.equal(comparePokerHands(twoPairA, twoPairB), 1);
@@ -73,6 +76,8 @@ test("blackjack settlement covers natural, win, loss, push, and bust", () => {
   assert.deepEqual(settleBlackjack({ playerCards:[10,7,8], dealerCards:[10,8], stake:10 }), { outcome:"loss", payout:0 });
   assert.deepEqual(settleBlackjack({ playerCards:[10,8], dealerCards:[9,9], stake:10 }), { outcome:"push", payout:10 });
   assert.deepEqual(settleBlackjack({ playerCards:[10,8,5], dealerCards:[10,8], stake:10 }), { outcome:"loss", payout:0 });
+  assert.throws(() => settleBlackjack({ playerCards:[14,13], dealerCards:[10,9], stake:Number.MAX_SAFE_INTEGER }), /Payout exceeds safe integer precision/);
+  assert.throws(() => settleBlackjack({ playerCards:[10,9], dealerCards:[10,8], stake:Number.MAX_SAFE_INTEGER }), /Payout exceeds safe integer precision/);
 });
 
 test("slot payout is deterministic, left-to-right, wild-aware, and multiplies wager per line", () => {

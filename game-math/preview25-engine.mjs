@@ -12,6 +12,10 @@ const CATEGORY_NAMES = ["High card", "One pair", "Two pair", "Three of a kind", 
 const SUITS = ["clubs", "diamonds", "hearts", "spades"];
 
 function assert(condition, message) { if (!condition) throw new TypeError(message); }
+function safePayout(value) {
+  assert(Number.isSafeInteger(value) && value >= 0, "Payout exceeds safe integer precision.");
+  return value;
+}
 function isIntegerBetween(value, min, max) { return Number.isInteger(value) && value >= min && value <= max; }
 function cardKey(card) { return String(card.rank) + ":" + card.suit; }
 function validateCard(card) {
@@ -93,9 +97,13 @@ export function evaluatePokerHand(cards) {
   }
   return best;
 }
+function validatePokerResult(hand, label) {
+  assert(hand && Number.isInteger(hand.category) && hand.category >= POKER_CATEGORY.HIGH_CARD && hand.category <= POKER_CATEGORY.STRAIGHT_FLUSH, label + " poker category must be an integer from 0 through 8.");
+  assert(Array.isArray(hand.tiebreakers) && hand.tiebreakers.length >= 1 && hand.tiebreakers.length <= 5 && hand.tiebreakers.every(rank => isIntegerBetween(rank, 2, 14)), label + " poker tiebreakers must contain 1–5 integer ranks from 2 through 14.");
+}
 export function comparePokerHands(a, b) {
-  assert(a && Number.isInteger(a.category) && Array.isArray(a.tiebreakers), "First poker hand is invalid.");
-  assert(b && Number.isInteger(b.category) && Array.isArray(b.tiebreakers), "Second poker hand is invalid.");
+  validatePokerResult(a, "First");
+  validatePokerResult(b, "Second");
   return compareTuple([a.category, ...a.tiebreakers], [b.category, ...b.tiebreakers]);
 }
 export function blackjackTotal(cards) {
@@ -115,8 +123,8 @@ export function settleBlackjack({ playerCards, dealerCards, stake }) {
   assert(Number.isSafeInteger(stake) && stake > 0, "Stake must be a positive safe integer.");
   const player = blackjackTotal(playerCards), dealer = blackjackTotal(dealerCards);
   if (player.bust) return { outcome: "loss", payout: 0 };
-  if (player.blackjack && !dealer.blackjack) return { outcome: "blackjack", payout: stake + Math.floor(stake * 1.5) };
-  if (dealer.bust) return { outcome: "win", payout: stake * 2 };
+  if (player.blackjack && !dealer.blackjack) return { outcome: "blackjack", payout: safePayout(stake + Math.floor(stake * 1.5)) };
+  if (dealer.bust) return { outcome: "win", payout: safePayout(stake * 2) };
   if (dealer.blackjack && !player.blackjack) return { outcome: "loss", payout: 0 };
   if (player.total > dealer.total) return { outcome: "win", payout: stake * 2 };
   if (player.total < dealer.total) return { outcome: "loss", payout: 0 };
