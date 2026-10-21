@@ -8,13 +8,13 @@ Four separate arcade identities under the That’s My Lingo studio umbrella. Sha
 
 1. **Spades Is My Lingo+** — target direction is a four-seat partnership Spades game with team bidding, nil bids, bags, contract scoring, partner-aware bots, difficulty settings, and round history. The current code remains a simplified trick-taking prototype: it enforces follow-suit and uses spades as trump, but does not implement the complete Spades+ scoring and strategy package.
 2. **Uhno Lingo U-NO** — distinct LINGO palette: coral, electric teal, lime, and violet. Standard matching-card inspiration with original action concepts: Switch-Up (change active color), Color Clash (penalty draw), and Wild Echo (repeat a color effect). The current prototype changes colors and applies simplified penalty draws; complete action-card turn states, legal deck distribution, and formal rules are not yet implemented.
-3. **Cashman Lingo Mania** — five-reel local virtual slot with provisional test paytable. Includes an original inline SVG Black Cashman concept in crimson streetwear, a subtle idle bob, a spin-in-progress lock, animated reel spin, winning-symbol highlights, win/near-miss reactions, and an accessible live toast. This is still concept-level vector art, not a finished production character sheet. Paytable values are not approved production math or certified RTP.
+3. **Cashman Lingo Mania** — five-reel local virtual slot with provisional test paytable. Includes an original inline SVG Black Cashman concept in crimson streetwear, five custom inline SVG reel symbols (cherries, bell, lemon, diamond, crown), a subtle idle bob, a spin-in-progress lock, animated reel spin, winning-symbol highlights, win/near-miss reactions, and an accessible live toast. This is still concept-level vector art, not a finished production character sheet. Paytable values are not approved production math or certified RTP.
 4. **Lions Lingo Eruptions** — changed from swap-match tiles to a reveal-and-row prototype. Balls begin hidden; tapping reveals a ball. A horizontal row of three or more matching revealed balls scores points and clears the row into new hidden balls. Longer rows receive a bonus. Current build uses 24 reveals and local scoring; vertical matches, cascades, special balls, and full balancing remain future work.
 
 ## Visual assets, representation, and licensing
 
 - Representation direction: center African-American / Black characters across mascot art, profile avatars, promotional pop-ups, character reactions, and future game illustrations. Avoid stereotypes; portray varied skin tones, hairstyles, streetwear, and personalities with dignity and specificity.
-- The mini-game page includes an original inline SVG Black Cashman concept, a subtle idle animation, spin/win reactions, animated reel states, winning-symbol highlights, and an accessible live-status pop-up. This is original prototype vector art, not a finished production illustration.
+- The mini-game page includes an original inline SVG Black Cashman concept, five custom inline SVG reel symbols, a subtle idle animation, spin/win reactions, animated reel states, winning-symbol highlights, and an accessible live-status pop-up. This is original prototype vector art, not a finished production illustration.
 - Current interface icons use inline SVG/CSS/native symbols, avoiding paid icon packs and unverified external downloads.
 - Before adding third-party art, icons, sounds, logos, or animations, verify the exact asset's commercial-use license and attribution terms; keep a source/license manifest. Do not assume every asset described as “free” permits commercial use.
 
@@ -23,7 +23,7 @@ Four separate arcade identities under the That’s My Lingo studio umbrella. Sha
 - Arcade catalog and direct links to each game, native buttons, live status text, restart controls, local demo wallet, and cosmetic-only store.
 - Spades uses a standard 52-card deck, four seats, follow-suit checks, and a simplified trick winner.
 - U-NO uses custom colors and action concepts, but current rules are a prototype and need deterministic unit tests.
-- Cashman uses five virtual reels and local demo Play Coins, with a locked spin state during the animation and animated result feedback; mascot art remains concept-level SVG.
+- Cashman uses five virtual reels and local demo Play Coins, with five original vector reel symbols, a locked spin state during the animation, accessible reel labels, and animated result feedback; mascot art remains concept-level SVG.
 - Lions uses hidden/revealed ball states, horizontal row detection, point feedback, and a finite reveal count.
 - Browser-local persistence only; localStorage is player-editable and is not a secure ledger or account sync.
 - Responsive dark styling and reduced-motion media query. Full accessibility and device QA remain pending.
