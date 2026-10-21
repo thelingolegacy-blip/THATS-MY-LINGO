@@ -1,0 +1,36 @@
+name: TML Static Quality Gate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches:
+      - "upgrade/**"
+      - "repair/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tml-quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-quality:
+    name: HTML and inline JavaScript validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run non-deploying quality gate
+        run: python scripts/tml_quality_gate.py
