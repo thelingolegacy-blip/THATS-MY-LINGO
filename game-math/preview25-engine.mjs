@@ -12,6 +12,10 @@ const CATEGORY_NAMES = ["High card", "One pair", "Two pair", "Three of a kind", 
 const SUITS = ["clubs", "diamonds", "hearts", "spades"];
 
 function assert(condition, message) { if (!condition) throw new TypeError(message); }
+function safePayout(value) {
+  assert(Number.isSafeInteger(value) && value >= 0, "Payout exceeds safe integer precision.");
+  return value;
+}
 function isIntegerBetween(value, min, max) { return Number.isInteger(value) && value >= min && value <= max; }
 function cardKey(card) { return String(card.rank) + ":" + card.suit; }
 function validateCard(card) {
@@ -115,10 +119,10 @@ export function settleBlackjack({ playerCards, dealerCards, stake }) {
   assert(Number.isSafeInteger(stake) && stake > 0, "Stake must be a positive safe integer.");
   const player = blackjackTotal(playerCards), dealer = blackjackTotal(dealerCards);
   if (player.bust) return { outcome: "loss", payout: 0 };
-  if (player.blackjack && !dealer.blackjack) return { outcome: "blackjack", payout: stake + Math.floor(stake * 1.5) };
-  if (dealer.bust) return { outcome: "win", payout: stake * 2 };
+  if (player.blackjack && !dealer.blackjack) return { outcome: "blackjack", payout: safePayout(stake + Math.floor(stake * 1.5)) };
+  if (dealer.bust) return { outcome: "win", payout: safePayout(stake * 2) };
   if (dealer.blackjack && !player.blackjack) return { outcome: "loss", payout: 0 };
-  if (player.total > dealer.total) return { outcome: "win", payout: stake * 2 };
+  if (player.total > dealer.total) return { outcome: "win", payout: safePayout(stake * 2) };
   if (player.total < dealer.total) return { outcome: "loss", payout: 0 };
   return { outcome: "push", payout: stake };
 }
