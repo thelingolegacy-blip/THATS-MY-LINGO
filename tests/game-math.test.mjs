@@ -62,7 +62,7 @@ test("seven-card poker selects the best five-card hand", () => {
 
 test("blackjack totals handle multiple aces, soft totals, and busts", () => {
   assert.deepEqual(blackjackTotal([14, 9]), { total: 20, soft: true, bust: false, blackjack: false });
-  assert.deepEqual(blackjackTotal([14, 14, 9]), { total: 14, soft: false, bust: false, blackjack: false });
+  assert.deepEqual(blackjackTotal([14, 14, 9]), { total: 21, soft: true, bust: false, blackjack: false });
   assert.deepEqual(blackjackTotal([10, 8, 7]), { total: 25, soft: false, bust: true, blackjack: false });
   assert.equal(blackjackTotal([14, 13]).blackjack, true);
 });
@@ -84,9 +84,9 @@ test("slot payout is deterministic, left-to-right, wild-aware, and multiplies wa
   ];
   const paylines = [[0,0,0,0,0],[1,1,1,1,1],[2,2,2,2,2]];
   const result = calculateSlotPayout({ grid, paylines, paytable, wagerPerLine:2 });
-  assert.equal(result.payout, 2*10 + 2*6 + 2*10);
+  assert.equal(result.payout, 2*2 + 2*6 + 2*10);
   assert.equal(result.wins.length, 3);
-  assert.equal(calculateSlotPayout({ grid, paylines:[ [0,0,0,0,0] ], paytable, wagerPerLine:1 }).payout, 10);
+  assert.equal(calculateSlotPayout({ grid, paylines:[ [0,0,0,0,0] ], paytable, wagerPerLine:1 }).payout, 2);
 });
 
 test("virtual wallet rejects overspending and invalid amounts, and repeated settlement is idempotent", () => {
