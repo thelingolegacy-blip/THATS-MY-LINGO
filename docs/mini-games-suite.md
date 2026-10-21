@@ -9,7 +9,7 @@ Four separate arcade identities under the That’s My Lingo studio umbrella. Sha
 1. **Spades Is My Lingo+** — target direction is a four-seat partnership Spades game with team bidding, nil bids, bags, contract scoring, partner-aware bots, difficulty settings, and round history. The current code remains a simplified trick-taking prototype: it enforces follow-suit and uses spades as trump, but does not implement the complete Spades+ scoring and strategy package.
 2. **Uhno Lingo U-NO** — distinct LINGO palette: coral, electric teal, lime, and violet. Standard matching-card inspiration with original action concepts: Switch-Up (change active color), Color Clash (penalty draw), and Wild Echo (repeat a color effect). The current prototype changes colors and applies simplified penalty draws; complete action-card turn states, legal deck distribution, and formal rules are not yet implemented.
 3. **Cashman Lingo Mania** — five-reel local virtual slot with provisional test paytable. Includes an original inline SVG Black Cashman concept in crimson streetwear, five custom inline SVG reel symbols (cherries, bell, lemon, diamond, crown), a subtle idle bob, a spin-in-progress lock, animated reel spin, winning-symbol highlights, win/near-miss reactions, and an accessible live toast. This is still concept-level vector art, not a finished production character sheet. Paytable values are not approved production math or certified RTP.
-4. **Lions Lingo Eruptions** — changed from swap-match tiles to a reveal-and-row prototype. Balls begin hidden; tapping reveals a ball. A horizontal row of three or more matching revealed balls scores points and clears the row into new hidden balls. Longer rows receive a bonus. Current build uses 24 reveals and local scoring; vertical matches, cascades, special balls, and full balancing remain future work.
+4. **Lions Lingo Eruptions** — changed from swap-match tiles to a reveal-and-row prototype. Balls begin hidden; tapping reveals a ball. A horizontal row of three or more matching revealed balls scores points and clears the row into new hidden balls. Longer rows receive a bonus. Current build uses 24 reveals and local scoring. Cleared matches refill as revealed balls and can trigger follow-up horizontal matches, with an eight-wave chain cap. A browser self-check covers 3-ball scoring, 5-ball bonus scoring, hidden-ball breaks, and a deterministic two-wave cascade. Vertical matches, special balls, and full balancing remain future work.
 
 ## Visual assets, representation, and licensing
 
@@ -24,7 +24,7 @@ Four separate arcade identities under the That’s My Lingo studio umbrella. Sha
 - Spades uses a standard 52-card deck, four seats, follow-suit checks, and a simplified trick winner.
 - U-NO uses custom colors and action concepts, but current rules are a prototype and need deterministic unit tests.
 - Cashman uses five virtual reels and local demo Play Coins, with five original vector reel symbols, a locked spin state during the animation, accessible reel labels, and animated result feedback; mascot art remains concept-level SVG.
-- Lions uses hidden/revealed ball states, horizontal row detection, point feedback, and a finite reveal count.
+- Lions uses hidden/revealed ball states, horizontal row detection, point feedback, a finite reveal count, revealed-ball refills for chain reactions, an eight-wave safety cap, and an in-page deterministic logic self-check.
 - Browser-local persistence only; localStorage is player-editable and is not a secure ledger or account sync.
 - Responsive dark styling and reduced-motion media query. Full accessibility and device QA remain pending.
 
@@ -40,6 +40,6 @@ Four separate arcade identities under the That’s My Lingo studio umbrella. Sha
 - **Spades+:** follow-suit enforcement, trump winner, trick ties, all 13 tricks, team contract scoring, nil/bag rules, partner bot behavior, hand exhaustion.
 - **U-NO:** matching, color selection, each custom action, turn order, draw exhaustion, invalid play rejection, bot win, empty-hand win.
 - **Cashman:** stake deduction, leftmost consecutive match calculation, each symbol/count payout, no-win path, insufficient balance, overflow bounds, reset behavior, mascot layout.
-- **Lions:** reveal state, horizontal row detection, score for 3/4/5+ balls, no duplicate scoring, hidden refill, reveal limit, mobile taps.
+- **Lions:** reveal state, horizontal row detection, score for 3/4/5+ balls, no duplicate scoring, hidden-ball row breaks, deterministic cascade resolution, chain cap, reveal limit, mobile taps.
 - **Store/global:** insufficient funds, one-time unlock, reload persistence, keyboard navigation, reduced motion, screen-reader announcements, small viewport, no console errors, storage failure, deterministic seeded math tests.
 - **Current status:** changes are authored on the feature branch and **have not been executed in a browser or through CI**. G02 remains blocked; this work does not bypass release gates.
