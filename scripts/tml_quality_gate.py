@@ -34,7 +34,7 @@ class AuditParser(HTMLParser):
         for key in ("src", "href"):
             value = attrs.get(key, "")
             if value and not value.startswith(("http://", "https://", "data:", "#", "mailto:", "tel:", "javascript:")):
-                if value.startswith("/"):
+                if value.startswith("/") and not value.startswith("/_vercel/"):
                     self.asset_refs.append(value)
     def handle_endtag(self, tag):
         if tag == "title" and self.title_depth:
