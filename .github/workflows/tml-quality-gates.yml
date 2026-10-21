@@ -1,0 +1,50 @@
+name: TML Static and Game Math Quality Gates
+
+on:
+  pull_request:
+    branches: [main, "repair/**"]
+  push:
+    branches:
+      - "upgrade/**"
+      - "repair/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tml-quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  game-math:
+    name: Deterministic game mathematics tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run game mathematics tests
+        run: node --test tests/game-math.test.mjs
+
+  static-quality:
+    name: HTML and inline JavaScript validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run non-deploying quality gate
+        run: python scripts/tml_quality_gate.py
