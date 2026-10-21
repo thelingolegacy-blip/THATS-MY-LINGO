@@ -1,8 +1,8 @@
-name: TML Static Quality Gate
+name: TML Static and Game Math Quality Gates
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, "repair/**"]
   push:
     branches:
       - "upgrade/**"
@@ -17,6 +17,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  game-math:
+    name: Deterministic game mathematics tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run game mathematics tests
+        run: node --test tests/game-math.test.mjs
+
   static-quality:
     name: HTML and inline JavaScript validation
     runs-on: ubuntu-latest
